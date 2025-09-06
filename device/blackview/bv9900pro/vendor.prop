@@ -1,0 +1,144 @@
+# Copyright (C) 2024 Blackview BV9900Pro Device Tree
+# Licensed under the Apache License, Version 2.0
+
+# Vendor properties for Blackview BV9900Pro
+
+# Device identification
+vendor.product.model=BV9900Pro
+vendor.product.brand=Blackview
+vendor.product.device=bv9900pro
+vendor.product.manufacturer=Blackview
+
+# Hardware identification
+vendor.hardware=mt6779
+vendor.board.platform=mt6779
+vendor.chipset=MediaTek
+vendor.cpu=ARM
+vendor.gpu=Mali-G72
+
+# Display configuration
+vendor.display.density=480
+vendor.display.width=1080
+vendor.display.height=2280
+vendor.display.rotation=0
+
+# Audio configuration
+vendor.audio.enable=1
+vendor.audio.primary=1
+vendor.audio.secondary=1
+vendor.audio.usb=1
+vendor.audio.bluetooth=1
+
+# Camera configuration
+vendor.camera.enable=1
+vendor.camera.primary=1
+vendor.camera.secondary=1
+vendor.camera.flash=1
+vendor.camera.autofocus=1
+
+# WiFi configuration
+vendor.wifi.enable=1
+vendor.wifi.interface=wlan0
+vendor.wifi.direct=p2p0
+vendor.wifi.hotspot=1
+
+# Bluetooth configuration
+vendor.bluetooth.enable=1
+vendor.bluetooth.classic=1
+vendor.bluetooth.le=1
+vendor.bluetooth.profiles=a2dp,hfp,hsp,pan,pbap
+
+# GPS configuration
+vendor.gps.enable=1
+vendor.gps.agps=1
+vendor.gps.glonass=1
+vendor.gps.beidou=1
+vendor.gps.galileo=1
+
+# Sensor configuration
+vendor.sensors.enable=1
+vendor.sensors.accelerometer=1
+vendor.sensors.gyroscope=1
+vendor.sensors.magnetometer=1
+vendor.sensors.proximity=1
+vendor.sensors.light=1
+
+# USB configuration
+vendor.usb.enable=1
+vendor.usb.vid=0x0e8d
+vendor.usb.pid=0x2008
+vendor.usb.functions=mtp,adb
+
+# Charger configuration
+vendor.charger.enable=1
+vendor.charger.voltage=5
+vendor.charger.current=2
+vendor.charger.fast=1
+
+# Power management
+vendor.power.enable=1
+vendor.power.suspend=1
+vendor.power.hibernate=1
+vendor.power.standby=1
+
+# Thermal management
+vendor.thermal.enable=1
+vendor.thermal.throttling=1
+vendor.thermal.cooling=1
+
+# Memory management
+vendor.memory.enable=1
+vendor.memory.compression=1
+vendor.memory.swap=1
+
+# Storage configuration
+vendor.storage.type=emmc
+vendor.storage.size=128GB
+vendor.storage.removable=0
+
+# Network configuration
+vendor.network.enable=1
+vendor.network.type=4G
+vendor.network.speed=LTE
+
+# Security configuration
+vendor.security.enable=1
+vendor.security.encryption=1
+vendor.security.verity=1
+vendor.security.selinux=1
+
+# Performance configuration
+vendor.performance.enable=1
+vendor.performance.boost=1
+vendor.performance.gpu=1
+vendor.performance.cpu=1
+
+# Debug configuration
+vendor.debug.enable=0
+vendor.debug.logging=0
+vendor.debug.trace=0
+
+# Development configuration
+vendor.development.enable=0
+vendor.development.debug=0
+vendor.development.testing=0
+
+# Testing configuration
+vendor.testing.enable=0
+vendor.testing.mode=0
+vendor.testing.unit=0
+
+# Production configuration
+vendor.production.enable=1
+vendor.production.mode=1
+vendor.production.stable=1
+
+# Release configuration
+vendor.release.enable=1
+vendor.release.mode=1
+vendor.release.stable=1
+
+# Final configuration
+vendor.final.enable=1
+vendor.final.mode=1
+vendor.final.stable=1

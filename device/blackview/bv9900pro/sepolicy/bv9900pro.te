@@ -1,0 +1,116 @@
+# Copyright (C) 2024 Blackview BV9900Pro Device Tree
+# Licensed under the Apache License, Version 2.0
+
+# SELinux policy for Blackview BV9900Pro
+
+# Device type definitions
+type bv9900pro_device, dev_type;
+type bv9900pro_sysfs, sysfs_type;
+
+# File types
+type bv9900pro_file, file_type;
+type bv9900pro_exec, exec_type, file_type;
+
+# Domain types
+type bv9900pro_domain, domain;
+type bv9900pro_service, service_manager_type;
+
+# Allow basic operations
+allow bv9900pro_domain self:capability { setuid setgid };
+allow bv9900pro_domain self:process { signal };
+allow bv9900pro_domain self:file { read write execute open create getattr setattr };
+
+# Allow access to device files
+allow bv9900pro_domain bv9900pro_device:chr_file { read write open ioctl };
+allow bv9900pro_domain bv9900pro_sysfs:file { read write open getattr setattr };
+
+# Allow access to system files
+allow bv9900pro_domain system_file:file { read execute };
+allow bv9900pro_domain system_file:dir { read search };
+
+# Allow access to vendor files
+allow bv9900pro_domain vendor_file:file { read execute };
+allow bv9900pro_domain vendor_file:dir { read search };
+
+# Allow access to property files
+allow bv9900pro_domain property_socket:sock_file { write };
+allow bv9900pro_domain property_service:service_manager { add };
+
+# Allow access to init files
+allow bv9900pro_domain init:unix_stream_socket { connectto };
+allow bv9900pro_domain init:process { signal };
+
+# Allow access to log files
+allow bv9900pro_domain logdr_socket:sock_file { write };
+allow bv9900pro_domain logdr_service:service_manager { add };
+
+# Allow access to audio files
+allow bv9900pro_domain audio_device:chr_file { read write open ioctl };
+allow bv9900pro_domain audio_hw_service:service_manager { add };
+
+# Allow access to camera files
+allow bv9900pro_domain camera_device:chr_file { read write open ioctl };
+allow bv9900pro_domain camera_service:service_manager { add };
+
+# Allow access to WiFi files
+allow bv9900pro_domain wifi_device:chr_file { read write open ioctl };
+allow bv9900pro_domain wifi_service:service_manager { add };
+
+# Allow access to Bluetooth files
+allow bv9900pro_domain bluetooth_device:chr_file { read write open ioctl };
+allow bv9900pro_domain bluetooth_service:service_manager { add };
+
+# Allow access to input files
+allow bv9900pro_domain input_device:chr_file { read write open ioctl };
+
+# Allow access to power management
+allow bv9900pro_domain power_service:service_manager { add };
+allow bv9900pro_domain power_hwservice:hwservice_manager { add };
+
+# Allow access to thermal management
+allow bv9900pro_domain thermal_service:service_manager { add };
+allow bv9900pro_domain thermal_hwservice:hwservice_manager { add };
+
+# Allow access to memory management
+allow bv9900pro_domain memory_service:service_manager { add };
+allow bv9900pro_domain memory_hwservice:hwservice_manager { add };
+
+# Allow access to storage
+allow bv9900pro_domain block_device:blk_file { read write open ioctl };
+allow bv9900pro_domain storage_service:service_manager { add };
+
+# Allow access to network
+allow bv9900pro_domain network_service:service_manager { add };
+allow bv9900pro_domain network_hwservice:hwservice_manager { add };
+
+# Allow access to security
+allow bv9900pro_domain security_service:service_manager { add };
+allow bv9900pro_domain security_hwservice:hwservice_manager { add };
+
+# Allow access to performance
+allow bv9900pro_domain performance_service:service_manager { add };
+allow bv9900pro_domain performance_hwservice:hwservice_manager { add };
+
+# Allow access to debug
+allow bv9900pro_domain debug_service:service_manager { add };
+allow bv9900pro_domain debug_hwservice:hwservice_manager { add };
+
+# Allow access to development
+allow bv9900pro_domain development_service:service_manager { add };
+allow bv9900pro_domain development_hwservice:hwservice_manager { add };
+
+# Allow access to testing
+allow bv9900pro_domain testing_service:service_manager { add };
+allow bv9900pro_domain testing_hwservice:hwservice_manager { add };
+
+# Allow access to production
+allow bv9900pro_domain production_service:service_manager { add };
+allow bv9900pro_domain production_hwservice:hwservice_manager { add };
+
+# Allow access to release
+allow bv9900pro_domain release_service:service_manager { add };
+allow bv9900pro_domain release_hwservice:hwservice_manager { add };
+
+# Allow access to final
+allow bv9900pro_domain final_service:service_manager { add };
+allow bv9900pro_domain final_hwservice:hwservice_manager { add };

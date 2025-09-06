@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2024 Blackview BV9900Pro Device Tree -->
+<!-- Licensed under the Apache License, Version 2.0 -->
+
+<mixer>
+    <!-- Speaker -->
+    <path name="speaker">
+        <ctl name="Speaker Switch" value="1" />
+        <ctl name="Speaker Volume" value="60" />
+    </path>
+    
+    <!-- Earpiece -->
+    <path name="earpiece">
+        <ctl name="Earpiece Switch" value="1" />
+        <ctl name="Earpiece Volume" value="60" />
+    </path>
+    
+    <!-- Headset -->
+    <path name="headset">
+        <ctl name="Headset Switch" value="1" />
+        <ctl name="Headset Volume" value="60" />
+    </path>
+    
+    <!-- Headphone -->
+    <path name="headphone">
+        <ctl name="Headphone Switch" value="1" />
+        <ctl name="Headphone Volume" value="60" />
+    </path>
+    
+    <!-- Bluetooth SCO -->
+    <path name="bt-sco">
+        <ctl name="Bluetooth SCO Switch" value="1" />
+        <ctl name="Bluetooth SCO Volume" value="60" />
+    </path>
+    
+    <!-- Bluetooth A2DP -->
+    <path name="bt-a2dp">
+        <ctl name="Bluetooth A2DP Switch" value="1" />
+        <ctl name="Bluetooth A2DP Volume" value="60" />
+    </path>
+    
+    <!-- USB device -->
+    <path name="usb-device">
+        <ctl name="USB Device Switch" value="1" />
+        <ctl name="USB Device Volume" value="60" />
+    </path>
+    
+    <!-- Microphone -->
+    <path name="mic">
+        <ctl name="Mic Switch" value="1" />
+        <ctl name="Mic Volume" value="60" />
+    </path>
+    
+    <!-- Headset microphone -->
+    <path name="headset-mic">
+        <ctl name="Headset Mic Switch" value="1" />
+        <ctl name="Headset Mic Volume" value="60" />
+    </path>
+    
+    <!-- Bluetooth SCO microphone -->
+    <path name="bt-sco-mic">
+        <ctl name="Bluetooth SCO Mic Switch" value="1" />
+        <ctl name="Bluetooth SCO Mic Volume" value="60" />
+    </path>
+    
+    <!-- USB device microphone -->
+    <path name="usb-device-mic">
+        <ctl name="USB Device Mic Switch" value="1" />
+        <ctl name="USB Device Mic Volume" value="60" />
+    </path>
+</mixer>

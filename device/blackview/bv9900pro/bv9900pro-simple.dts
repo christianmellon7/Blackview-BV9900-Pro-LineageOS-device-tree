@@ -1,0 +1,483 @@
+/dts-v1/;
+
+/ {
+	model = "Blackview BV9900Pro";
+	compatible = "blackview,bv9900pro", "mediatek,mt6779";
+	chassis-type = "handset";
+
+	aliases {
+		serial0 = &uart0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	memory {
+		device_type = "memory";
+		reg = <0x40000000 0x20000000>;
+	};
+
+	cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		cpu0: cpu@0 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a55";
+			reg = <0x000>;
+			enable-method = "psci";
+		};
+
+		cpu1: cpu@1 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a55";
+			reg = <0x001>;
+			enable-method = "psci";
+		};
+
+		cpu2: cpu@2 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a55";
+			reg = <0x002>;
+			enable-method = "psci";
+		};
+
+		cpu3: cpu@3 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a55";
+			reg = <0x003>;
+			enable-method = "psci";
+		};
+
+		cpu4: cpu@100 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a75";
+			reg = <0x100>;
+			enable-method = "psci";
+		};
+
+		cpu5: cpu@101 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a75";
+			reg = <0x101>;
+			enable-method = "psci";
+		};
+
+		cpu6: cpu@102 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a75";
+			reg = <0x102>;
+			enable-method = "psci";
+		};
+
+		cpu7: cpu@103 {
+			device_type = "cpu";
+			compatible = "arm,cortex-a75";
+			reg = <0x103>;
+			enable-method = "psci";
+		};
+	};
+
+	psci {
+		compatible = "arm,psci-1.0";
+		method = "smc";
+	};
+
+	clk26m: oscillator@0 {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-frequency = <26000000>;
+		clock-output-names = "clk26m";
+	};
+
+	clk32k: oscillator@1 {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-frequency = <32768>;
+		clock-output-names = "clk32k";
+	};
+
+	timer {
+		compatible = "arm,armv8-timer";
+		interrupt-parent = <&gic>;
+		interrupts = <1 13 4>,
+			     <1 14 4>,
+			     <1 11 4>,
+			     <1 10 4>;
+	};
+
+	gic: interrupt-controller@0c000000 {
+		compatible = "arm,gic-v3";
+		#interrupt-cells = <3>;
+		interrupt-controller;
+		reg = <0x0 0x0c000000 0x0 0x40000>,  /* GICD */
+		      <0x0 0x0c100000 0x0 0x200000>; /* GICR */
+		interrupts = <1 9 4>;
+	};
+
+	uart0: serial@11002000 {
+		compatible = "mediatek,mt6779-uart", "mediatek,mt6577-uart";
+		reg = <0x0 0x11002000 0x0 0x400>;
+		interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>, <&clk26m>;
+		clock-names = "baud", "bus";
+		status = "okay";
+	};
+
+	uart1: serial@11003000 {
+		compatible = "mediatek,mt6779-uart", "mediatek,mt6577-uart";
+		reg = <0x0 0x11003000 0x0 0x400>;
+		interrupts = <GIC_SPI 92 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>, <&clk26m>;
+		clock-names = "baud", "bus";
+		status = "disabled";
+	};
+
+	uart2: serial@11004000 {
+		compatible = "mediatek,mt6779-uart", "mediatek,mt6577-uart";
+		reg = <0x0 0x11004000 0x0 0x400>;
+		interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>, <&clk26m>;
+		clock-names = "baud", "bus";
+		status = "disabled";
+	};
+
+	uart3: serial@11005000 {
+		compatible = "mediatek,mt6779-uart", "mediatek,mt6577-uart";
+		reg = <0x0 0x11005000 0x0 0x400>;
+		interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>, <&clk26m>;
+		clock-names = "baud", "bus";
+		status = "disabled";
+	};
+
+	i2c0: i2c@11007000 {
+		compatible = "mediatek,mt6779-i2c", "mediatek,mt6577-i2c";
+		reg = <0x0 0x11007000 0x0 0x70>;
+		interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>;
+		clock-names = "main";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+	};
+
+	i2c1: i2c@11008000 {
+		compatible = "mediatek,mt6779-i2c", "mediatek,mt6577-i2c";
+		reg = <0x0 0x11008000 0x0 0x70>;
+		interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>;
+		clock-names = "main";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+	};
+
+	i2c2: i2c@11009000 {
+		compatible = "mediatek,mt6779-i2c", "mediatek,mt6577-i2c";
+		reg = <0x0 0x11009000 0x0 0x70>;
+		interrupts = <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>;
+		clock-names = "main";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+	};
+
+	i2c3: i2c@1100a000 {
+		compatible = "mediatek,mt6779-i2c", "mediatek,mt6577-i2c";
+		reg = <0x0 0x1100a000 0x0 0x70>;
+		interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>;
+		clock-names = "main";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+	};
+
+	i2c4: i2c@1100b000 {
+		compatible = "mediatek,mt6779-i2c", "mediatek,mt6577-i2c";
+		reg = <0x0 0x1100b000 0x0 0x70>;
+		interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>;
+		clock-names = "main";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+	};
+
+	i2c5: i2c@1100c000 {
+		compatible = "mediatek,mt6779-i2c", "mediatek,mt6577-i2c";
+		reg = <0x0 0x1100c000 0x0 0x70>;
+		interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>;
+		clock-names = "main";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+	};
+
+	i2c6: i2c@1100d000 {
+		compatible = "mediatek,mt6779-i2c", "mediatek,mt6577-i2c";
+		reg = <0x0 0x1100d000 0x0 0x70>;
+		interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&clk26m>;
+		clock-names = "main";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		status = "okay";
+	};
+
+	pio: pinctrl@10005000 {
+		compatible = "mediatek,mt6779-pinctrl";
+		reg = <0x0 0x10005000 0x0 0x1000>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		gpio-ranges = <&pio 0 0 203>;
+		interrupt-controller;
+		#interrupt-cells = <2>;
+		interrupts = <GIC_SPI 204 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	topckgen: syscon@10000000 {
+		compatible = "mediatek,mt6779-topckgen", "syscon";
+		reg = <0x0 0x10000000 0x0 0x1000>;
+		#clock-cells = <1>;
+	};
+
+	scpsys: syscon@10006000 {
+		compatible = "mediatek,mt6779-scpsys", "syscon";
+		reg = <0x0 0x10006000 0x0 0x1000>;
+		#power-domain-cells = <1>;
+		clocks = <&topckgen 0>,
+			 <&topckgen 1>,
+			 <&topckgen 2>,
+			 <&topckgen 3>,
+			 <&topckgen 4>,
+			 <&topckgen 5>,
+			 <&topckgen 6>,
+			 <&topckgen 7>,
+			 <&topckgen 8>,
+			 <&topckgen 9>,
+			 <&topckgen 10>;
+		clock-names = "mfg", "mm", "venc", "vdec", "img", "cam", "dsp",
+			      "audio", "conn", "usb", "chg";
+	};
+
+	camsys: syscon@1a000000 {
+		compatible = "mediatek,mt6779-camsys", "syscon";
+		reg = <0x0 0x1a000000 0x0 0x1000>;
+		#clock-cells = <1>;
+	};
+
+	mmc0: mmc@11230000 {
+		compatible = "mediatek,mt6779-mmc";
+		reg = <0x0 0x11230000 0x0 0x1000>;
+		interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 0>;
+		clock-names = "source";
+		status = "okay";
+	};
+
+	mmc1: mmc@11240000 {
+		compatible = "mediatek,mt6779-mmc";
+		reg = <0x0 0x11240000 0x0 0x1000>;
+		interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 1>;
+		clock-names = "source";
+		status = "disabled";
+	};
+
+	mmc2: mmc@11250000 {
+		compatible = "mediatek,mt6779-mmc";
+		reg = <0x0 0x11250000 0x0 0x1000>;
+		interrupts = <GIC_SPI 79 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 2>;
+		clock-names = "source";
+		status = "disabled";
+	};
+
+	/* Display */
+	display_panel: display-panel {
+		compatible = "blackview,bv9900pro-panel";
+		status = "okay";
+	};
+
+	/* Touchscreen */
+	touchscreen: touchscreen {
+		compatible = "goodix,gt9886";
+		reg = <0x5d>;
+		interrupt-parent = <&pio>;
+		interrupts = <14 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 14 0>;
+		reset-gpios = <&pio 15 0>;
+		status = "okay";
+	};
+
+	/* Camera */
+	camera_main: camera-main {
+		compatible = "mediatek,mt6779-camera";
+		reg = <0x1a003000 0x1000>;
+		clocks = <&camsys 0>,
+			 <&camsys 1>,
+			 <&camsys 2>,
+			 <&camsys 3>,
+			 <&camsys 4>,
+			 <&camsys 5>;
+		clock-names = "cam", "camtg", "seninf", "camsv0", "camsv1", "camsv2";
+		power-domains = <&scpsys 5>;
+		mediatek,cam-id = <0>;
+		status = "okay";
+	};
+
+	camera_sub: camera-sub {
+		compatible = "mediatek,mt6779-camera";
+		reg = <0x1a003000 0x1000>;
+		clocks = <&camsys 0>,
+			 <&camsys 1>,
+			 <&camsys 2>,
+			 <&camsys 3>,
+			 <&camsys 4>,
+			 <&camsys 5>;
+		clock-names = "cam", "camtg", "seninf", "camsv0", "camsv1", "camsv2";
+		power-domains = <&scpsys 5>;
+		mediatek,cam-id = <1>;
+		status = "okay";
+	};
+
+	/* Audio */
+	audio: audio {
+		compatible = "mediatek,mt6779-audio";
+		reg = <0x11220000 0x1000>;
+		clocks = <&topckgen 7>,
+			 <&topckgen 8>,
+			 <&topckgen 9>,
+			 <&topckgen 10>;
+		clock-names = "audio", "aud_intbus", "aud_1", "aud_2";
+		power-domains = <&scpsys 7>;
+		status = "okay";
+	};
+
+	/* WiFi */
+	wifi: wifi {
+		compatible = "mediatek,mt6779-wifi";
+		reg = <0x18000000 0x100000>;
+		interrupts = <GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 8>;
+		clock-names = "wifi";
+		power-domains = <&scpsys 8>;
+		status = "okay";
+	};
+
+	/* Bluetooth */
+	bluetooth: bluetooth {
+		compatible = "mediatek,mt6779-bluetooth";
+		reg = <0x18000000 0x100000>;
+		interrupts = <GIC_SPI 154 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 8>;
+		clock-names = "bt";
+		power-domains = <&scpsys 8>;
+		status = "okay";
+	};
+
+	/* GPS */
+	gps: gps {
+		compatible = "mediatek,mt6779-gps";
+		reg = <0x18000000 0x100000>;
+		interrupts = <GIC_SPI 155 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 8>;
+		clock-names = "gps";
+		power-domains = <&scpsys 8>;
+		status = "okay";
+	};
+
+	/* Sensors */
+	accelerometer: accelerometer {
+		compatible = "bosch,bma2x2";
+		reg = <0x18>;
+		interrupt-parent = <&pio>;
+		interrupts = <16 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 16 0>;
+		status = "okay";
+	};
+
+	gyroscope: gyroscope {
+		compatible = "bosch,bmg160";
+		reg = <0x68>;
+		interrupt-parent = <&pio>;
+		interrupts = <17 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 17 0>;
+		status = "okay";
+	};
+
+	magnetometer: magnetometer {
+		compatible = "akm,ak09916c";
+		reg = <0x0c>;
+		interrupt-parent = <&pio>;
+		interrupts = <18 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 18 0>;
+		status = "okay";
+	};
+
+	proximity: proximity {
+		compatible = "sharp,gp2ap002s00f";
+		reg = <0x44>;
+		interrupt-parent = <&pio>;
+		interrupts = <19 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 19 0>;
+		status = "okay";
+	};
+
+	light: light {
+		compatible = "sharp,gp2ap002s00f";
+		reg = <0x44>;
+		interrupt-parent = <&pio>;
+		interrupts = <20 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 20 0>;
+		status = "okay";
+	};
+
+	/* USB */
+	usb: usb {
+		compatible = "mediatek,mt6779-usb";
+		reg = <0x11200000 0x10000>;
+		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 9>;
+		clock-names = "usb";
+		power-domains = <&scpsys 9>;
+		status = "okay";
+	};
+
+	/* Storage */
+	emmc: emmc {
+		compatible = "mediatek,mt6779-emmc";
+		reg = <0x11230000 0x1000>;
+		clocks = <&topckgen 0>;
+		clock-names = "emmc";
+		power-domains = <&scpsys 1>;
+		status = "okay";
+	};
+
+	/* Charger */
+	charger: charger {
+		compatible = "mediatek,mt6779-charger";
+		reg = <0x1000b000 0x1000>;
+		interrupts = <GIC_SPI 202 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 10>;
+		clock-names = "charger";
+		power-domains = <&scpsys 10>;
+		status = "okay";
+	};
+
+	/* Battery */
+	battery: battery {
+		compatible = "mediatek,mt6779-battery";
+		reg = <0x1000b000 0x1000>;
+		interrupts = <GIC_SPI 202 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen 10>;
+		clock-names = "battery";
+		power-domains = <&scpsys 10>;
+		status = "okay";
+	};
+};

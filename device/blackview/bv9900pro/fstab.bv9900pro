@@ -1,0 +1,132 @@
+# Copyright (C) 2024 Blackview BV9900Pro Device Tree
+# Licensed under the Apache License, Version 2.0
+
+# Android fstab for Blackview BV9900Pro
+# <src> <mnt_point> <type> <mnt_flags and options> <fs_mgr_flags>
+
+# System partition
+/dev/block/platform/11230000.mmc/by-name/system /system ext4 ro,barrier=1 wait,verify
+
+# Vendor partition
+/dev/block/platform/11230000.mmc/by-name/vendor /vendor ext4 ro,barrier=1 wait,verify
+
+# Userdata partition
+/dev/block/platform/11230000.mmc/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check,encryptable=footer
+
+# Cache partition
+/dev/block/platform/11230000.mmc/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Metadata partition
+/dev/block/platform/11230000.mmc/by-name/metadata /metadata ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Persist partition
+/dev/block/platform/11230000.mmc/by-name/persist /persist ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Nvram partition
+/dev/block/platform/11230000.mmc/by-name/nvram /nvram ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Nvdata partition
+/dev/block/platform/11230000.mmc/by-name/nvdata /nvdata ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Nvcfg partition
+/dev/block/platform/11230000.mmc/by-name/nvcfg /nvcfg ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Protect1 partition
+/dev/block/platform/11230000.mmc/by-name/protect1 /protect1 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Protect2 partition
+/dev/block/platform/11230000.mmc/by-name/protect2 /protect2 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Recovery partition
+/dev/block/platform/11230000.mmc/by-name/recovery /recovery ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Boot partition
+/dev/block/platform/11230000.mmc/by-name/boot /boot ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Logo partition
+/dev/block/platform/11230000.mmc/by-name/logo /logo ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Dtbo partition
+/dev/block/platform/11230000.mmc/by-name/dtbo /dtbo ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Tee1 partition
+/dev/block/platform/11230000.mmc/by-name/tee1 /tee1 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Tee2 partition
+/dev/block/platform/11230000.mmc/by-name/tee2 /tee2 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Lk partition
+/dev/block/platform/11230000.mmc/by-name/lk /lk ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Lk2 partition
+/dev/block/platform/11230000.mmc/by-name/lk2 /lk2 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Audio dsp partition
+/dev/block/platform/11230000.mmc/by-name/audio_dsp /audio_dsp ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Scp partition
+/dev/block/platform/11230000.mmc/by-name/scp /scp ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Sspm partition
+/dev/block/platform/11230000.mmc/by-name/sspm /sspm ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Spmfw partition
+/dev/block/platform/11230000.mmc/by-name/spmfw /spmfw ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Cam vpu1 partition
+/dev/block/platform/11230000.mmc/by-name/cam_vpu1 /cam_vpu1 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Cam vpu2 partition
+/dev/block/platform/11230000.mmc/by-name/cam_vpu2 /cam_vpu2 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Cam vpu3 partition
+/dev/block/platform/11230000.mmc/by-name/cam_vpu3 /cam_vpu3 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Md1img partition
+/dev/block/platform/11230000.mmc/by-name/md1img /md1img ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Vbmeta partition
+/dev/block/platform/11230000.mmc/by-name/vbmeta /vbmeta ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Misc partition
+/dev/block/platform/11230000.mmc/by-name/misc /misc ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Para partition
+/dev/block/platform/11230000.mmc/by-name/para /para ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Expdb partition
+/dev/block/platform/11230000.mmc/by-name/expdb /expdb ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Frp partition
+/dev/block/platform/11230000.mmc/by-name/frp /frp ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Seccfg partition
+/dev/block/platform/11230000.mmc/by-name/seccfg /seccfg ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Otp partition
+/dev/block/platform/11230000.mmc/by-name/otp /otp ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Sec1 partition
+/dev/block/platform/11230000.mmc/by-name/sec1 /sec1 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Proinfo partition
+/dev/block/platform/11230000.mmc/by-name/proinfo /proinfo ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Nvram partition
+/dev/block/platform/11230000.mmc/by-name/nvram /nvram ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Boot para partition
+/dev/block/platform/11230000.mmc/by-name/boot_para /boot_para ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Gz1 partition
+/dev/block/platform/11230000.mmc/by-name/gz1 /gz1 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Gz2 partition
+/dev/block/platform/11230000.mmc/by-name/gz2 /gz2 ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Flashinfo partition
+/dev/block/platform/11230000.mmc/by-name/flashinfo /flashinfo ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+
+# Sgpt partition
+/dev/block/platform/11230000.mmc/by-name/sgpt /sgpt ext4 noatime,nosuid,nodev,noauto_da_alloc,barrier=1 wait,check
+

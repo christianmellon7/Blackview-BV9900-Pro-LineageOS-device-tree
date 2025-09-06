@@ -1,0 +1,117 @@
+# Copyright (C) 2024 Blackview BV9900Pro Device Tree
+# Licensed under the Apache License, Version 2.0
+
+on early-init
+    # Set permissions for device tree
+    chmod 0644 /proc/device-tree
+    chmod 0644 /proc/device-tree/*
+
+on init
+    # Set up device properties
+    setprop ro.product.model "BV9900Pro"
+    setprop ro.product.brand "Blackview"
+    setprop ro.product.device "bv9900pro"
+    setprop ro.product.manufacturer "Blackview"
+    
+    # Set up hardware properties
+    setprop ro.hardware "mt6779"
+    setprop ro.board.platform "mt6779"
+    
+    # Set up display properties
+    setprop ro.sf.lcd_density "480"
+    setprop ro.sf.hwrotation "0"
+    
+    # Set up audio properties
+    setprop ro.audio.silent "0"
+    setprop ro.audio.ring "1"
+    setprop ro.audio.notification "1"
+    setprop ro.audio.alarm "1"
+    
+    # Set up camera properties
+    setprop ro.camera.sound.forced "1"
+    setprop ro.camera.sound.forced "1"
+    
+    # Set up WiFi properties
+    setprop wifi.interface "wlan0"
+    setprop wifi.supplicant_scan_interval "15"
+    
+    # Set up Bluetooth properties
+    setprop bluetooth.enable "1"
+    setprop bluetooth.le "1"
+    
+    # Set up GPS properties
+    setprop ro.gps.agps_provider "1"
+    setprop ro.gps.agps_provider "1"
+    
+    # Set up sensor properties
+    setprop ro.sensors.accelerometer "1"
+    setprop ro.sensors.gyroscope "1"
+    setprop ro.sensors.magnetometer "1"
+    setprop ro.sensors.proximity "1"
+    setprop ro.sensors.light "1"
+    
+    # Set up USB properties
+    setprop ro.usb.vid "0x0e8d"
+    setprop ro.usb.pid "0x2008"
+    
+    # Set up charging properties
+    setprop ro.charger.enable "1"
+    setprop ro.charger.voltage "5"
+    setprop ro.charger.current "2"
+    
+    # Set up power management
+    setprop ro.power.management "1"
+    setprop ro.power.suspend "1"
+    
+    # Set up thermal management
+    setprop ro.thermal.management "1"
+    setprop ro.thermal.throttling "1"
+    
+    # Set up memory management
+    setprop ro.memory.management "1"
+    setprop ro.memory.compression "1"
+    
+    # Set up storage properties
+    setprop ro.storage.type "emmc"
+    setprop ro.storage.size "128GB"
+    
+    # Set up network properties
+    setprop ro.network.type "4G"
+    setprop ro.network.speed "LTE"
+    
+    # Set up security properties
+    setprop ro.security.enable "1"
+    setprop ro.security.encryption "1"
+    
+    # Set up performance properties
+    setprop ro.performance.enable "1"
+    setprop ro.performance.boost "1"
+    
+    # Set up debugging properties
+    setprop ro.debug.enable "0"
+    setprop ro.debug.logging "0"
+    
+    # Set up development properties
+    setprop ro.development.enable "0"
+    setprop ro.development.debug "0"
+    
+    # Set up testing properties
+    setprop ro.testing.enable "0"
+    setprop ro.testing.mode "0"
+    
+    # Set up production properties
+    setprop ro.production.enable "1"
+    setprop ro.production.mode "1"
+    
+    # Set up release properties
+    setprop ro.release.enable "1"
+    setprop ro.release.mode "1"
+    
+    # Set up stable properties
+    setprop ro.stable.enable "1"
+    setprop ro.stable.mode "1"
+    
+    # Set up final properties
+    setprop ro.final.enable "1"
+    setprop ro.final.mode "1"
+

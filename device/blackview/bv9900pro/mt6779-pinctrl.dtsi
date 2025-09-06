@@ -1,0 +1,178 @@
+&pio {
+	/* UART0 pins */
+	uart0_pins_a: uart0@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_0_URXD0__FUNC_URXD0>,
+				 <MT6779_PIN_1_UTXD0__FUNC_UTXD0>;
+		};
+	};
+
+	/* I2C0 pins */
+	i2c0_pins_a: i2c0@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_58_SDA0__FUNC_SDA0_0>,
+				 <MT6779_PIN_59_SCL0__FUNC_SCL0_0>;
+			bias-disable;
+		};
+	};
+
+	/* I2C1 pins */
+	i2c1_pins_a: i2c1@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_52_SDA1__FUNC_SDA1_0>,
+				 <MT6779_PIN_53_SCL1__FUNC_SCL1_0>;
+			bias-disable;
+		};
+	};
+
+	/* I2C2 pins */
+	i2c2_pins_a: i2c2@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_60_SDA2__FUNC_SDA2_0>,
+				 <MT6779_PIN_61_SCL2__FUNC_SCL2_0>;
+			bias-disable;
+		};
+	};
+
+	/* I2C3 pins */
+	i2c3_pins_a: i2c3@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_62_SDA3__FUNC_SDA3_0>,
+				 <MT6779_PIN_63_SCL3__FUNC_SCL3_0>;
+			bias-disable;
+		};
+	};
+
+	/* I2C4 pins */
+	i2c4_pins_a: i2c4@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_64_SDA4__FUNC_SDA4_0>,
+				 <MT6779_PIN_65_SCL4__FUNC_SCL4_0>;
+			bias-disable;
+		};
+	};
+
+	/* I2C5 pins */
+	i2c5_pins_a: i2c5@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_66_SDA5__FUNC_SDA5_0>,
+				 <MT6779_PIN_67_SCL5__FUNC_SCL5_0>;
+			bias-disable;
+		};
+	};
+
+	/* I2C6 pins */
+	i2c6_pins_a: i2c6@0 {
+		pins1 {
+			pinmux = <MT6779_PIN_68_SDA6__FUNC_SDA6_0>,
+				 <MT6779_PIN_69_SCL6__FUNC_SCL6_0>;
+			bias-disable;
+		};
+	};
+
+	/* MMC0 pins */
+	mmc0_pins_default: mmc0default {
+		pins_cmd_dat {
+			pinmux = <MT6779_PIN_107_MSDC0_DAT0__FUNC_MSDC0_DAT0>,
+				 <MT6779_PIN_108_MSDC0_DAT1__FUNC_MSDC0_DAT1>,
+				 <MT6779_PIN_109_MSDC0_DAT2__FUNC_MSDC0_DAT2>,
+				 <MT6779_PIN_110_MSDC0_DAT3__FUNC_MSDC0_DAT3>,
+				 <MT6779_PIN_111_MSDC0_DAT4__FUNC_MSDC0_DAT4>,
+				 <MT6779_PIN_112_MSDC0_DAT5__FUNC_MSDC0_DAT5>,
+				 <MT6779_PIN_113_MSDC0_DAT6__FUNC_MSDC0_DAT6>,
+				 <MT6779_PIN_114_MSDC0_DAT7__FUNC_MSDC0_DAT7>,
+				 <MT6779_PIN_115_MSDC0_CMD__FUNC_MSDC0_CMD>;
+			input-enable;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>;
+		};
+
+		pins_clk {
+			pinmux = <MT6779_PIN_116_MSDC0_CLK__FUNC_MSDC0_CLK>;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-pull-down = <MTK_PUPD_SET_R1R0_10>;
+		};
+
+		pins_rst {
+			pinmux = <MT6779_PIN_117_MSDC0_RSTB__FUNC_MSDC0_RSTB>;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>;
+		};
+	};
+
+	/* MMC1 pins */
+	mmc1_pins_default: mmc1default {
+		pins_cmd_dat {
+			pinmux = <MT6779_PIN_118_MSDC1_DAT0__FUNC_MSDC1_DAT0>,
+				 <MT6779_PIN_119_MSDC1_DAT1__FUNC_MSDC1_DAT1>,
+				 <MT6779_PIN_120_MSDC1_DAT2__FUNC_MSDC1_DAT2>,
+				 <MT6779_PIN_121_MSDC1_DAT3__FUNC_MSDC1_DAT3>,
+				 <MT6779_PIN_122_MSDC1_CMD__FUNC_MSDC1_CMD>;
+			input-enable;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>;
+		};
+
+		pins_clk {
+			pinmux = <MT6779_PIN_123_MSDC1_CLK__FUNC_MSDC1_CLK>;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-pull-down = <MTK_PUPD_SET_R1R0_10>;
+		};
+	};
+
+	/* MMC2 pins */
+	mmc2_pins_default: mmc2default {
+		pins_cmd_dat {
+			pinmux = <MT6779_PIN_124_MSDC2_DAT0__FUNC_MSDC2_DAT0>,
+				 <MT6779_PIN_125_MSDC2_DAT1__FUNC_MSDC2_DAT1>,
+				 <MT6779_PIN_126_MSDC2_DAT2__FUNC_MSDC2_DAT2>,
+				 <MT6779_PIN_127_MSDC2_DAT3__FUNC_MSDC2_DAT3>,
+				 <MT6779_PIN_128_MSDC2_CMD__FUNC_MSDC2_CMD>;
+			input-enable;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-pull-up = <MTK_PUPD_SET_R1R0_01>;
+		};
+
+		pins_clk {
+			pinmux = <MT6779_PIN_129_MSDC2_CLK__FUNC_MSDC2_CLK>;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-pull-down = <MTK_PUPD_SET_R1R0_10>;
+		};
+	};
+
+	/* Camera pins */
+	camera_pins_default: camdefault {
+		pins_cmd_dat {
+			pinmux = <MT6779_PIN_130_CAM_MCLK0__FUNC_CAM_MCLK0>,
+				 <MT6779_PIN_131_CAM_MCLK1__FUNC_CAM_MCLK1>,
+				 <MT6779_PIN_132_CAM_MCLK2__FUNC_CAM_MCLK2>,
+				 <MT6779_PIN_133_CAM_MCLK3__FUNC_CAM_MCLK3>;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-disable;
+		};
+	};
+
+	/* Touchscreen pins */
+	touchscreen_pins_default: touchdefault {
+		pins_cmd_dat {
+			pinmux = <MT6779_PIN_14_GPIO14__FUNC_GPIO14>,
+				 <MT6779_PIN_15_GPIO15__FUNC_GPIO15>;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-disable;
+		};
+	};
+
+	/* Sensor pins */
+	sensor_pins_default: sensordefault {
+		pins_cmd_dat {
+			pinmux = <MT6779_PIN_16_GPIO16__FUNC_GPIO16>,
+				 <MT6779_PIN_17_GPIO17__FUNC_GPIO17>,
+				 <MT6779_PIN_18_GPIO18__FUNC_GPIO18>,
+				 <MT6779_PIN_19_GPIO19__FUNC_GPIO19>,
+				 <MT6779_PIN_20_GPIO20__FUNC_GPIO20>;
+			drive-strength = <MTK_DRIVE_4mA>;
+			bias-disable;
+		};
+	};
+};
+

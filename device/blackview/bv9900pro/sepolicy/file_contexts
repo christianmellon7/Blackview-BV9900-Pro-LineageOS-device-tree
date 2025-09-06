@@ -1,0 +1,41 @@
+# Copyright (C) 2024 Blackview BV9900Pro Device Tree
+# Licensed under the Apache License, Version 2.0
+
+# File contexts for Blackview BV9900Pro
+
+# Device tree files
+/vendor/firmware/bv9900pro\.dtb u:object_r:vendor_firmware_file:s0
+/vendor/firmware/mt6779\.dtb u:object_r:vendor_firmware_file:s0
+
+# Audio files
+/vendor/etc/audio_policy\.conf u:object_r:vendor_configs_file:s0
+/vendor/etc/mixer_paths\.xml u:object_r:vendor_configs_file:s0
+
+# Media files
+/vendor/etc/media_codecs\.xml u:object_r:vendor_configs_file:s0
+/vendor/etc/media_codecs_performance\.xml u:object_r:vendor_configs_file:s0
+/vendor/etc/media_profiles\.xml u:object_r:vendor_configs_file:s0
+
+# WiFi files
+/vendor/etc/wifi/wpa_supplicant\.conf u:object_r:vendor_configs_file:s0
+
+# Bluetooth files
+/vendor/etc/bluetooth/bt_vendor\.conf u:object_r:vendor_configs_file:s0
+
+# System properties
+/vendor/build\.prop u:object_r:vendor_build_prop:s0
+/vendor/default\.prop u:object_r:vendor_default_prop:s0
+
+# Init files
+/init\.bv9900pro\.rc u:object_r:rootfs:s0
+/init\.bv9900pro\.usb\.rc u:object_r:rootfs:s0
+/ueventd\.bv9900pro\.rc u:object_r:rootfs:s0
+/fstab\.bv9900pro u:object_r:rootfs:s0
+
+# Device nodes
+/dev/block/platform/11230000\.mmc u:object_r:block_device:s0
+/dev/snd/.* u:object_r:audio_device:s0
+/dev/video.* u:object_r:camera_device:s0
+/dev/input/.* u:object_r:input_device:s0
+/dev/wmtWifi u:object_r:wifi_device:s0
+/dev/ttyMT.* u:object_r:bluetooth_device:s0

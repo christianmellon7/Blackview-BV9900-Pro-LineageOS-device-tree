@@ -1,0 +1,102 @@
+# Copyright (C) 2024 Blackview BV9900Pro Device Tree
+# Licensed under the Apache License, Version 2.0
+
+# Device permissions
+/dev/block/platform/11230000.mmc/by-name/system    root:root 0644
+/dev/block/platform/11230000.mmc/by-name/vendor    root:root 0644
+/dev/block/platform/11230000.mmc/by-name/userdata  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/cache     root:root 0644
+/dev/block/platform/11230000.mmc/by-name/metadata  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/persist   root:root 0644
+/dev/block/platform/11230000.mmc/by-name/nvram     root:root 0644
+/dev/block/platform/11230000.mmc/by-name/nvdata    root:root 0644
+/dev/block/platform/11230000.mmc/by-name/nvcfg     root:root 0644
+/dev/block/platform/11230000.mmc/by-name/protect1  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/protect2  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/recovery  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/boot      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/logo      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/dtbo      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/tee1      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/tee2      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/lk        root:root 0644
+/dev/block/platform/11230000.mmc/by-name/lk2       root:root 0644
+/dev/block/platform/11230000.mmc/by-name/audio_dsp root:root 0644
+/dev/block/platform/11230000.mmc/by-name/scp       root:root 0644
+/dev/block/platform/11230000.mmc/by-name/sspm      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/spmfw     root:root 0644
+/dev/block/platform/11230000.mmc/by-name/cam_vpu1  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/cam_vpu2  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/cam_vpu3  root:root 0644
+/dev/block/platform/11230000.mmc/by-name/md1img    root:root 0644
+/dev/block/platform/11230000.mmc/by-name/vbmeta    root:root 0644
+/dev/block/platform/11230000.mmc/by-name/misc      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/para      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/expdb     root:root 0644
+/dev/block/platform/11230000.mmc/by-name/frp       root:root 0644
+/dev/block/platform/11230000.mmc/by-name/seccfg    root:root 0644
+/dev/block/platform/11230000.mmc/by-name/otp       root:root 0644
+/dev/block/platform/11230000.mmc/by-name/sec1      root:root 0644
+/dev/block/platform/11230000.mmc/by-name/proinfo   root:root 0644
+/dev/block/platform/11230000.mmc/by-name/boot_para root:root 0644
+/dev/block/platform/11230000.mmc/by-name/gz1       root:root 0644
+/dev/block/platform/11230000.mmc/by-name/gz2       root:root 0644
+/dev/block/platform/11230000.mmc/by-name/flashinfo root:root 0644
+/dev/block/platform/11230000.mmc/by-name/sgpt      root:root 0644
+
+# Audio devices
+/dev/snd/*           audio:audio 0660
+/dev/snd/pcmC*D*c    audio:audio 0660
+/dev/snd/controlC*   audio:audio 0660
+
+# Camera devices
+/dev/video*          camera:camera 0660
+
+# Graphics devices
+/dev/graphics/*      graphics:graphics 0660
+/dev/dri/*           graphics:graphics 0660
+
+# Input devices
+/dev/input/*         input:input 0660
+
+# USB devices
+/dev/bus/usb/*       root:root 0666
+
+# WiFi devices
+/dev/wmtWifi         wifi:wifi 0660
+
+# Bluetooth devices
+/dev/ttyMT*          bluetooth:bluetooth 0660
+
+# GPS devices
+/dev/ttyMT*          gps:gps 0660
+
+# Sensor devices
+/dev/input/event*    input:input 0660
+
+# Power management
+/dev/rtc0            system:system 0644
+/dev/rtc1            system:system 0644
+
+# Thermal management
+/dev/thermal*        system:system 0644
+
+# Memory management
+/dev/ion             system:system 0644
+
+# Storage devices
+/dev/block/*         root:root 0644
+/dev/disk/*          root:root 0644
+
+# Network devices
+/dev/tun             system:system 0660
+/dev/net/tun         system:system 0660
+
+# Security devices
+/dev/tee             system:system 0644
+/dev/trusty          system:system 0644
+
+# Debug devices
+/dev/kmsg            system:system 0644
+/dev/console         system:system 0644
+/dev/tty*            system:system 0644

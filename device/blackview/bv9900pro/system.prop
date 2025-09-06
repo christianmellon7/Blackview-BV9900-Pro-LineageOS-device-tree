@@ -1,0 +1,156 @@
+# Copyright (C) 2024 Blackview BV9900Pro Device Tree
+# Licensed under the Apache License, Version 2.0
+
+# Device properties
+ro.product.model=BV9900Pro
+ro.product.brand=Blackview
+ro.product.device=bv9900pro
+ro.product.manufacturer=Blackview
+ro.product.name=bv9900pro
+ro.product.board=mt6779
+
+# Hardware properties
+ro.hardware=mt6779
+ro.board.platform=mt6779
+ro.arch=arm64
+ro.arch.arm64=arm64-v8a
+ro.arch.arm=armeabi-v7a
+
+# Display properties
+ro.sf.lcd_density=480
+ro.sf.hwrotation=0
+ro.sf.lcd_width=1080
+ro.sf.lcd_height=2280
+
+# Audio properties
+ro.audio.silent=0
+ro.audio.ring=1
+ro.audio.notification=1
+ro.audio.alarm=1
+ro.audio.music=1
+ro.audio.voice=1
+ro.audio.system=1
+
+# Camera properties
+ro.camera.sound.forced=1
+ro.camera.sound.forced=1
+ro.camera.auto_focus=1
+ro.camera.flash=1
+ro.camera.front=1
+ro.camera.back=1
+
+# WiFi properties
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=15
+wifi.direct.interface=p2p0
+wifi.direct.interface=p2p0
+
+# Bluetooth properties
+bluetooth.enable=1
+bluetooth.le=1
+bluetooth.classic=1
+bluetooth.profile.a2dp=1
+bluetooth.profile.hfp=1
+bluetooth.profile.hsp=1
+bluetooth.profile.pan=1
+bluetooth.profile.pbap=1
+
+# GPS properties
+ro.gps.agps_provider=1
+ro.gps.agps_provider=1
+ro.gps.satellite_count=12
+ro.gps.accuracy=3
+
+# Sensor properties
+ro.sensors.accelerometer=1
+ro.sensors.gyroscope=1
+ro.sensors.magnetometer=1
+ro.sensors.proximity=1
+ro.sensors.light=1
+ro.sensors.step_counter=1
+ro.sensors.step_detector=1
+
+# USB properties
+ro.usb.vid=0x0e8d
+ro.usb.pid=0x2008
+ro.usb.manufacturer=Blackview
+ro.usb.product=BV9900Pro
+ro.usb.serial=1234567890
+
+# Charger properties
+ro.charger.enable=1
+ro.charger.voltage=5
+ro.charger.current=2
+ro.charger.voltage.max=5
+ro.charger.current.max=2
+
+# Power management
+ro.power.management=1
+ro.power.suspend=1
+ro.power.hibernate=1
+ro.power.standby=1
+
+# Thermal management
+ro.thermal.management=1
+ro.thermal.throttling=1
+ro.thermal.cooling=1
+
+# Memory management
+ro.memory.management=1
+ro.memory.compression=1
+ro.memory.swap=1
+
+# Storage properties
+ro.storage.type=emmc
+ro.storage.size=128GB
+ro.storage.removable=0
+ro.storage.mountable=1
+
+# Network properties
+ro.network.type=4G
+ro.network.speed=LTE
+ro.network.operator=unknown
+ro.network.country=unknown
+
+# Security properties
+ro.security.enable=1
+ro.security.encryption=1
+ro.security.verity=1
+ro.security.selinux=1
+
+# Performance properties
+ro.performance.enable=1
+ro.performance.boost=1
+ro.performance.gpu=1
+ro.performance.cpu=1
+
+# Debug properties
+ro.debug.enable=0
+ro.debug.logging=0
+ro.debug.trace=0
+ro.debug.memory=0
+
+# Development properties
+ro.development.enable=0
+ro.development.debug=0
+ro.development.testing=0
+
+# Testing properties
+ro.testing.enable=0
+ro.testing.mode=0
+ro.testing.unit=0
+
+# Production properties
+ro.production.enable=1
+ro.production.mode=1
+ro.production.stable=1
+
+# Release properties
+ro.release.enable=1
+ro.release.mode=1
+ro.release.stable=1
+
+# Final properties
+ro.final.enable=1
+ro.final.mode=1
+ro.final.stable=1

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2024 Blackview BV9900Pro Device Tree -->
+<!-- Licensed under the Apache License, Version 2.0 -->
+
+<MediaSettings>
+    <CamcorderProfiles>
+        <EncoderProfile quality="high" fileFormat="mp4" duration="60">
+            <Video codec="h264" bitRate="8000000" width="1920" height="1080" frameRate="30" />
+            <Audio codec="aac" bitRate="128000" sampleRate="44100" channels="2" />
+        </EncoderProfile>
+        
+        <EncoderProfile quality="low" fileFormat="mp4" duration="60">
+            <Video codec="h264" bitRate="2000000" width="1280" height="720" frameRate="30" />
+            <Audio codec="aac" bitRate="128000" sampleRate="44100" channels="2" />
+        </EncoderProfile>
+        
+        <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="60">
+            <Video codec="h264" bitRate="8000000" width="1920" height="1080" frameRate="30" />
+            <Audio codec="aac" bitRate="128000" sampleRate="44100" channels="2" />
+        </EncoderProfile>
+        
+        <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="60">
+            <Video codec="h264" bitRate="2000000" width="1280" height="720" frameRate="30" />
+            <Audio codec="aac" bitRate="128000" sampleRate="44100" channels="2" />
+        </EncoderProfile>
+    </CamcorderProfiles>
+    
+    <ImageEncoding quality="90" />
+    <ImageDecoding memCap="20000000" />
+    
+    <VideoEncoderCap name="h264" enabled="true" minBitRate="64000" maxBitRate="20000000" />
+    <VideoEncoderCap name="h265" enabled="true" minBitRate="64000" maxBitRate="20000000" />
+    <VideoEncoderCap name="vp8" enabled="true" minBitRate="64000" maxBitRate="20000000" />
+    <VideoEncoderCap name="vp9" enabled="true" minBitRate="64000" maxBitRate="20000000" />
+    
+    <AudioEncoderCap name="aac" enabled="true" minBitRate="8000" maxBitRate="320000" />
+    <AudioEncoderCap name="amrnb" enabled="true" minBitRate="8000" maxBitRate="320000" />
+    <AudioEncoderCap name="amrwb" enabled="true" minBitRate="8000" maxBitRate="320000" />
+    
+    <VideoDecoderCap name="h264" enabled="true" />
+    <VideoDecoderCap name="h265" enabled="true" />
+    <VideoDecoderCap name="vp8" enabled="true" />
+    <VideoDecoderCap name="vp9" enabled="true" />
+    
+    <AudioDecoderCap name="aac" enabled="true" />
+    <AudioDecoderCap name="amrnb" enabled="true" />
+    <AudioDecoderCap name="amrwb" enabled="true" />
+</MediaSettings>

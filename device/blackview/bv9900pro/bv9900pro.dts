@@ -1,0 +1,258 @@
+/dts-v1/;
+
+/ {
+	model = "Blackview BV9900Pro";
+	compatible = "blackview,bv9900pro", "mediatek,mt6779";
+	chassis-type = "handset";
+
+	aliases {
+		serial0 = &uart0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	memory {
+		device_type = "memory";
+		reg = <0x40000000 0x20000000>;
+	};
+
+	reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		/* 64KB for bootloader */
+		bootloader@0x10000000 {
+			reg = <0x0 0x10000000 0x0 0x10000>;
+		};
+
+		/* 2MB for ATF */
+		atf@0x10010000 {
+			reg = <0x0 0x10010000 0x0 0x200000>;
+		};
+
+		/* 1MB for SCP */
+		scp@0x10200000 {
+			reg = <0x0 0x10200000 0x0 0x100000>;
+		};
+
+		/* 1MB for SPM */
+		spm@0x10300000 {
+			reg = <0x0 0x10300000 0x0 0x100000>;
+		};
+
+		/* 1MB for SSPM */
+		sspm@0x10400000 {
+			reg = <0x0 0x10400000 0x0 0x100000>;
+		};
+
+		/* 1MB for TEE */
+		tee@0x10500000 {
+			reg = <0x0 0x10500000 0x0 0x100000>;
+		};
+
+		/* 1MB for Audio DSP */
+		audio_dsp@0x10600000 {
+			reg = <0x0 0x10600000 0x0 0x100000>;
+		};
+
+		/* 1MB for Camera VPU */
+		cam_vpu@0x10700000 {
+			reg = <0x0 0x10700000 0x0 0x100000>;
+		};
+	};
+
+	/* Power management */
+	pmic {
+		compatible = "mediatek,mt6358";
+		reg = <0x0 0x1000b000 0x0 0x1000>;
+		interrupts = <GIC_SPI 202 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		#interrupt-cells = <2>;
+	};
+
+	/* Display */
+	display_panel: display-panel {
+		compatible = "blackview,bv9900pro-panel";
+		status = "okay";
+	};
+
+	/* Touchscreen */
+	touchscreen: touchscreen {
+		compatible = "goodix,gt9886";
+		reg = <0x5d>;
+		interrupt-parent = <&pio>;
+		interrupts = <14 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 14 0>;
+		reset-gpios = <&pio 15 0>;
+		status = "okay";
+	};
+
+	/* Camera */
+	camera_main: camera-main {
+		compatible = "mediatek,mt6779-camera";
+		reg = <0x1a003000 0x1000>;
+		clocks = <&camsys CLK_CAM_CAM>,
+			 <&camsys CLK_CAM_CAMTG>,
+			 <&camsys CLK_CAM_SENINF>,
+			 <&camsys CLK_CAM_CAMSV0>,
+			 <&camsys CLK_CAM_CAMSV1>,
+			 <&camsys CLK_CAM_CAMSV2>;
+		clock-names = "cam", "camtg", "seninf", "camsv0", "camsv1", "camsv2";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_CAM>;
+		mediatek,cam-id = <0>;
+		status = "okay";
+	};
+
+	camera_sub: camera-sub {
+		compatible = "mediatek,mt6779-camera";
+		reg = <0x1a003000 0x1000>;
+		clocks = <&camsys CLK_CAM_CAM>,
+			 <&camsys CLK_CAM_CAMTG>,
+			 <&camsys CLK_CAM_SENINF>,
+			 <&camsys CLK_CAM_CAMSV0>,
+			 <&camsys CLK_CAM_CAMSV1>,
+			 <&camsys CLK_CAM_CAMSV2>;
+		clock-names = "cam", "camtg", "seninf", "camsv0", "camsv1", "camsv2";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_CAM>;
+		mediatek,cam-id = <1>;
+		status = "okay";
+	};
+
+	/* Audio */
+	audio: audio {
+		compatible = "mediatek,mt6779-audio";
+		reg = <0x11220000 0x1000>;
+		clocks = <&topckgen CLK_TOP_AUDIO_SEL>,
+			 <&topckgen CLK_TOP_AUD_INTBUS_SEL>,
+			 <&topckgen CLK_TOP_AUD_1_SEL>,
+			 <&topckgen CLK_TOP_AUD_2_SEL>;
+		clock-names = "audio", "aud_intbus", "aud_1", "aud_2";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_AUDIO>;
+		status = "okay";
+	};
+
+	/* WiFi */
+	wifi: wifi {
+		compatible = "mediatek,mt6779-wifi";
+		reg = <0x18000000 0x100000>;
+		interrupts = <GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen CLK_TOP_WIFI_SEL>;
+		clock-names = "wifi";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_CONN>;
+		status = "okay";
+	};
+
+	/* Bluetooth */
+	bluetooth: bluetooth {
+		compatible = "mediatek,mt6779-bluetooth";
+		reg = <0x18000000 0x100000>;
+		interrupts = <GIC_SPI 154 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen CLK_TOP_BT_SEL>;
+		clock-names = "bt";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_CONN>;
+		status = "okay";
+	};
+
+	/* GPS */
+	gps: gps {
+		compatible = "mediatek,mt6779-gps";
+		reg = <0x18000000 0x100000>;
+		interrupts = <GIC_SPI 155 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen CLK_TOP_GPS_SEL>;
+		clock-names = "gps";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_CONN>;
+		status = "okay";
+	};
+
+	/* Sensors */
+	accelerometer: accelerometer {
+		compatible = "bosch,bma2x2";
+		reg = <0x18>;
+		interrupt-parent = <&pio>;
+		interrupts = <16 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 16 0>;
+		status = "okay";
+	};
+
+	gyroscope: gyroscope {
+		compatible = "bosch,bmg160";
+		reg = <0x68>;
+		interrupt-parent = <&pio>;
+		interrupts = <17 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 17 0>;
+		status = "okay";
+	};
+
+	magnetometer: magnetometer {
+		compatible = "akm,ak09916c";
+		reg = <0x0c>;
+		interrupt-parent = <&pio>;
+		interrupts = <18 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 18 0>;
+		status = "okay";
+	};
+
+	proximity: proximity {
+		compatible = "sharp,gp2ap002s00f";
+		reg = <0x44>;
+		interrupt-parent = <&pio>;
+		interrupts = <19 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 19 0>;
+		status = "okay";
+	};
+
+	light: light {
+		compatible = "sharp,gp2ap002s00f";
+		reg = <0x44>;
+		interrupt-parent = <&pio>;
+		interrupts = <20 IRQ_TYPE_EDGE_FALLING>;
+		irq-gpios = <&pio 20 0>;
+		status = "okay";
+	};
+
+	/* USB */
+	usb: usb {
+		compatible = "mediatek,mt6779-usb";
+		reg = <0x11200000 0x10000>;
+		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen CLK_TOP_USB_SEL>;
+		clock-names = "usb";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_USB>;
+		status = "okay";
+	};
+
+	/* Storage */
+	emmc: emmc {
+		compatible = "mediatek,mt6779-emmc";
+		reg = <0x11230000 0x1000>;
+		clocks = <&topckgen CLK_TOP_EMMC_SEL>;
+		clock-names = "emmc";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_MM>;
+		status = "okay";
+	};
+
+	/* Charger */
+	charger: charger {
+		compatible = "mediatek,mt6779-charger";
+		reg = <0x1000b000 0x1000>;
+		interrupts = <GIC_SPI 202 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen CLK_TOP_CHG_SEL>;
+		clock-names = "charger";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_CHG>;
+		status = "okay";
+	};
+
+	/* Battery */
+	battery: battery {
+		compatible = "mediatek,mt6779-battery";
+		reg = <0x1000b000 0x1000>;
+		interrupts = <GIC_SPI 202 IRQ_TYPE_LEVEL_HIGH>;
+		clocks = <&topckgen CLK_TOP_BAT_SEL>;
+		clock-names = "battery";
+		power-domains = <&scpsys MT6779_POWER_DOMAIN_CHG>;
+		status = "okay";
+	};
+};
