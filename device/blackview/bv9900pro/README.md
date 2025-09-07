@@ -7,7 +7,7 @@ This device tree is designed for the Blackview BV9900Pro smartphone based on the
 - **SoC**: MediaTek MT6779 (Helio P90)
 - **CPU**: 8-core (4x Cortex-A75 @ 2.2GHz + 4x Cortex-A55 @ 2.0GHz)
 - **GPU**: Mali-G72 MP3 @ 970MHz
-- **RAM**: 6GB LPDDR4X
+- **RAM**: 8GB LPDDR4X
 - **Storage**: 128GB eMMC
 - **Display**: 6.3" IPS LCD, 1080x2280, 480 DPI
 - **Camera**: 48MP + 16MP + 8MP + 2MP rear, 16MP front
