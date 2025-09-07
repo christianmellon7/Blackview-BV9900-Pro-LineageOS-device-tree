@@ -91,7 +91,6 @@ blackview/bv9900pro/
 ### Audio
 - Speaker: Single
 - Microphone: Dual
-- Headphone: 3.5mm jack
 
 ### Power
 - Battery: 4380mAh Li-Po
